@@ -1,0 +1,32 @@
+{
+  "id": "mesh-organizer",
+  "name": "Mesh Organizer",
+  "urn": "mesh-organizer:_user",
+  "available": true,
+  "port": 35385,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: mesh-organizer",
+  "short_desc": "Compress and organise your 3d models. Your personal 3d printing library.",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "latest",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1780589639765,
+  "updated_at": 1780589639765,
+  "force_pull": false
+}

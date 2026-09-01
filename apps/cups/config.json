@@ -1,0 +1,32 @@
+{
+  "id": "cups",
+  "name": "CUPS Print Server",
+  "urn": "cups:_user",
+  "available": true,
+  "port": 631,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: cups",
+  "short_desc": "CUPS Print Server",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "latest",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1786571004818,
+  "updated_at": 1786571004818,
+  "force_pull": false
+}

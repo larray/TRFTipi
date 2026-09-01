@@ -1,0 +1,32 @@
+{
+  "id": "tdarr",
+  "name": "tdarr",
+  "urn": "tdarr:_user",
+  "available": true,
+  "port": 8265,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: tdarr",
+  "short_desc": "Distributed transcode automation",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "2.86.01",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1786542923264,
+  "updated_at": 1786542923264,
+  "force_pull": false
+}

@@ -1,0 +1,17 @@
+x-runtipi:
+  schema_version: 2
+services:
+  pocket-id:
+    image: ghcr.io/pocket-id/pocket-id
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      - TRUST_PROXY=true
+      - ENCRYPTION_KEY_FILE=/data/pocket-id.env
+      - VERSION_CHECK_DISABLED=true
+      - ANALYTICS_DISABLED=true
+      - EMAIL_ONE_TIME_ACCESS_AS_UNAUTHENTICATED_ENABLED=true
+    x-runtipi:
+      internal_port: "1411"
+      is_main: true
+

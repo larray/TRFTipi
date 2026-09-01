@@ -1,0 +1,32 @@
+{
+  "id": "bentopdf",
+  "name": "BentoPDF",
+  "urn": "bentopdf:_user",
+  "available": true,
+  "port": 80,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: bentopdf",
+  "short_desc": "The Privacy First PDF Toolkit",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "latest",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1784825697647,
+  "updated_at": 1784825697647,
+  "force_pull": false
+}

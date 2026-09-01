@@ -1,0 +1,12 @@
+x-runtipi:
+  schema_version: 2
+services:
+  shlink-web-client:
+    image: ghcr.io/shlinkio/shlink-web-client:4.7.1
+    environment:
+      - SHLINK_SERVER_URL=https://shlink.media.larcar.us/
+      - SHLINK_SERVER_API_KEY=8895d02e-3ef8-4004-9fd5-d313a4897cd5
+    x-runtipi:
+      internal_port: "8080"
+      is_main: true
+

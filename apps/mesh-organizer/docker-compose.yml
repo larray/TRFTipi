@@ -1,0 +1,18 @@
+x-runtipi:
+  schema_version: 2
+services:
+  mesh-web:
+    image: ghcr.io/suchmememanyskill/mesh-organiser:latest
+    volumes:
+      - ${APP_DATA_DIR}/cfg:/cfg
+    environment:
+      - APP_CONFIG_PATH=/cfg/config.json
+      - LOCAL_ACCOUNT_PASSWORD=meshit4me
+    deploy:
+      resources:
+        limits:
+          memory: 1000M
+    x-runtipi:
+      internal_port: "3000"
+      is_main: true
+

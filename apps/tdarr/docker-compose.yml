@@ -1,0 +1,35 @@
+x-runtipi:
+  schema_version: 2
+services:
+  tdarr:
+    image: ghcr.io/haveagitgat/tdarr:2.86.01
+    ports:
+      - 8266:8266/tcp
+    volumes:
+      - ${APP_DATA_DIR}/server:/app/server
+      - ${APP_DATA_DIR}/configs:/app/configs
+      - ${APP_DATA_DIR}/logs:/app/logs
+      - /mnt/video:/mnt/video
+    environment:
+      - serverIP=0.0.0.0
+      - serverPort=8266
+      - webUIPort=8265
+      - internalNode=false
+      - inContainer=true
+      - ffmpegVersion=7
+      - nodeName=MyInternalNode
+      - auth=false
+      - openBrowser=false
+      - maxLogSizeMB=10
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "5"
+    x-runtipi:
+      internal_port: 8265
+      is_main: true
+
