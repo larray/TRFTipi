@@ -1,0 +1,31 @@
+{
+  "id": "terminix",
+  "name": "Terminix",
+  "urn": "terminix:_user",
+  "available": true,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: terminix",
+  "short_desc": "Self-hosted SSH and remote desktop management.",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "latest",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1784586125471,
+  "updated_at": 1784586125471,
+  "force_pull": false
+}

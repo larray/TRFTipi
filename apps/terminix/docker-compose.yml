@@ -1,0 +1,23 @@
+x-runtipi:
+  schema_version: 2
+services:
+  termix:
+    image: ghcr.io/lukegus/termix:latest
+    restart: unless-stopped
+    volumes:
+      - termix-data:/app/data
+    depends_on:
+      - guacd
+    x-runtipi:
+      internal_port: "8080"
+      is_main: true
+  guacd:
+    image: guacamole/guacd:1.6.0
+    restart: unless-stopped
+volumes:
+  termix-data:
+    driver: local
+networks:
+  termix-net:
+    driver: bridge
+
