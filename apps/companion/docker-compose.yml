@@ -1,0 +1,19 @@
+x-runtipi:
+  schema_version: 2
+services:
+  companion:
+    image: ghcr.io/bitfocus/companion/companion:latest
+    restart: unless-stopped
+    ports:
+      - 8000:8000/tcp
+      - 8000:8000/udp
+      - 16622:16622/tcp
+      - 16622:16622/udp
+      - 16623:16623/tcp
+      - 16623:16623/udp
+    volumes:
+      - ${APP_DATA_DIR}/data/companion:/companion
+    x-runtipi:
+      internal_port: "8000"
+      is_main: true
+
