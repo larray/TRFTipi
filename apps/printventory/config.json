@@ -1,0 +1,31 @@
+{
+  "id": "printventory",
+  "name": "Printventory",
+  "urn": "printventory:_user",
+  "available": true,
+  "categories": [
+    "development"
+  ],
+  "description": "Custom application: printventory",
+  "short_desc": "Your local 3D model library, finally organized",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "2.2.11",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1790778394171,
+  "updated_at": 1790778394171,
+  "force_pull": false
+}

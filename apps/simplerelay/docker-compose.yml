@@ -1,0 +1,61 @@
+services:
+  simplerelay:
+    image: ghcr.io/larray/simplerelay:1.1.0-hardened.1
+    environment:
+      - TZ=${TZ}
+      # Database (hex password, so it is safe inside the URL)
+      - RELAY_DATABASE_URL=postgresql://simplerelay:${SIMPLERELAY_DB_PASSWORD}@simplerelay-db:5432/simplerelay
+      - RELAY_SECRET_KEY=${SIMPLERELAY_SECRET_KEY}
+      # First-start admin account
+      - RELAY_ADMIN_EMAIL=${SIMPLERELAY_ADMIN_EMAIL}
+      - RELAY_ADMIN_PASSWORD=${SIMPLERELAY_ADMIN_PASSWORD}
+      # Relay identity. RELAY_PORT must stay 2525 (Postfix listens there).
+      - RELAY_HOSTNAME=${SIMPLERELAY_HOSTNAME}
+      - RELAY_PUBLIC_IP=${SIMPLERELAY_PUBLIC_IP}
+      - RELAY_PORT=2525
+      # Links in emails; Runtipi fills these in
+      - RELAY_BASE_URL=${APP_PROTOCOL}://${APP_DOMAIN}
+      # Hardening
+      - RELAY_REGISTRATION_ENABLED=false
+      - RELAY_COOKIE_SECURE=${SIMPLERELAY_COOKIE_SECURE}
+      - RELAY_ALLOW_PRIVATE_SMTP_HOSTS=false
+      # Trust X-Forwarded-For from Traefik so rate limits see real client IPs
+      - FORWARDED_ALLOW_IPS=*
+    volumes:
+      - ${APP_DATA_DIR}/data/relay:/data
+    ports:
+      # SMTP listener (the web UI port is mapped by Runtipi automatically)
+      - "2525:2525"
+    depends_on:
+      simplerelay-db:
+        condition: service_healthy
+    healthcheck:
+      test: curl -fsS http://127.0.0.1:8080/api/relay-info || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+
+  simplerelay-db:
+    image: postgres:16.15-alpine
+    environment:
+      - POSTGRES_USER=simplerelay
+      - POSTGRES_PASSWORD=${SIMPLERELAY_DB_PASSWORD}
+      - POSTGRES_DB=simplerelay
+      - POSTGRES_INITDB_ARGS=--data-checksums
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    stop_grace_period: 30s
+    healthcheck:
+      test: pg_isready -U simplerelay -d simplerelay
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+x-runtipi:
+  schema_version: 2

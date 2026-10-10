@@ -1,0 +1,81 @@
+{
+  "name": "SimpleRelay",
+  "id": "simplerelay",
+  "available": true,
+  "short_desc": "Self-hosted SMTP relay with a web dashboard and per-client access control.",
+  "author": "toinbox (hardened build)",
+  "port": 8580,
+  "categories": ["utilities", "network"],
+  "description": "SimpleRelay relays mail from your LAN devices and apps through your existing email providers (Gmail, etc.), with a web dashboard, DNS checks and an IP / SMTP-AUTH allow-list. This build is a hardened fork: registration is disabled, weak secrets are refused at startup, and provider hosts are validated.",
+  "tipi_version": 1,
+  "version": "1.1.0-hardened.1",
+  "source": "https://github.com/toinbox/simplerelay",
+  "website": "https://github.com/toinbox/simplerelay",
+  "exposable": true,
+  "dynamic_config": true,
+  "min_tipi_version": "4.5.0",
+  "supported_architectures": ["amd64"],
+  "form_fields": [
+    {
+      "type": "email",
+      "label": "Admin email",
+      "hint": "Login for the dashboard. Created on first start only.",
+      "required": true,
+      "env_variable": "SIMPLERELAY_ADMIN_EMAIL"
+    },
+    {
+      "type": "password",
+      "label": "Admin password",
+      "hint": "At least 12 characters. Used once to create the admin account; change it later in the dashboard.",
+      "min": 12,
+      "max": 128,
+      "required": true,
+      "env_variable": "SIMPLERELAY_ADMIN_PASSWORD"
+    },
+    {
+      "type": "fqdnip",
+      "label": "Relay hostname",
+      "hint": "Name or IP your devices use to reach the relay. Used for the SMTP greeting and DNS checks.",
+      "placeholder": "relay.example.com",
+      "required": true,
+      "env_variable": "SIMPLERELAY_HOSTNAME"
+    },
+    {
+      "type": "ip",
+      "label": "Public IP (optional)",
+      "hint": "Only needed if you want the relay to identify itself with a public IP. Leave blank otherwise.",
+      "required": false,
+      "env_variable": "SIMPLERELAY_PUBLIC_IP"
+    },
+    {
+      "type": "text",
+      "label": "Dashboard served over HTTPS?",
+      "hint": "Choose Yes only if you open the dashboard through an https:// address; the login cookie then refuses plain HTTP.",
+      "required": true,
+      "options": [
+        { "label": "No (plain HTTP, e.g. http://host:8580)", "value": "false" },
+        { "label": "Yes (https:// domain via Traefik)", "value": "true" }
+      ],
+      "env_variable": "SIMPLERELAY_COOKIE_SECURE"
+    },
+    {
+      "type": "random",
+      "label": "Database password",
+      "min": 32,
+      "encoding": "hex",
+      "required": true,
+      "env_variable": "SIMPLERELAY_DB_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Secret key",
+      "hint": "Signs logins and encrypts stored provider passwords. Back it up: if it changes, saved provider passwords must be re-entered.",
+      "min": 64,
+      "encoding": "hex",
+      "required": true,
+      "env_variable": "SIMPLERELAY_SECRET_KEY"
+    }
+  ],
+  "created_at": 1791655746134,
+  "updated_at": 1791655746134
+}
