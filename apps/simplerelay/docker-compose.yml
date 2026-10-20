@@ -1,6 +1,6 @@
 services:
   simplerelay:
-    image: ghcr.io/larray/simplerelay:1.1.0-hardened.2
+    image: ghcr.io/larray/simplerelay:1.1.0-hardened.3
     environment:
       - TZ=${TZ}
       # Database (hex password, so it is safe inside the URL)

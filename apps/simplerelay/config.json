@@ -8,7 +8,7 @@
   "categories": ["utilities", "network"],
   "description": "SimpleRelay relays mail from your LAN devices and apps through your existing email providers (Gmail, etc.), with a web dashboard, DNS checks and an IP / SMTP-AUTH allow-list. This build is a hardened fork: registration is disabled, weak secrets are refused at startup, and provider hosts are validated.",
   "tipi_version": 1,
-  "version": "1.1.0-hardened.2",
+  "version": "1.1.0-hardened.3",
   "source": "https://github.com/toinbox/simplerelay",
   "website": "https://github.com/toinbox/simplerelay",
   "exposable": true,
