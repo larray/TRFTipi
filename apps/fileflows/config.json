@@ -1,0 +1,32 @@
+{
+  "id": "fileflows",
+  "name": "FileFlows",
+  "urn": "fileflows:_user",
+  "available": true,
+  "port": 80,
+  "categories": [
+    "development"
+  ],
+  "description": "FileFlows lets you monitor and process any file type with custom flows. Videos, audio, images, archives, comics, eBooks—you name it!",
+  "short_desc": "FileFlows lets you monitor and process any file type with custom flows.",
+  "author": "User",
+  "source": "",
+  "website": "",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "26.10",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1792522906615,
+  "updated_at": 1792522906615,
+  "force_pull": false
+}

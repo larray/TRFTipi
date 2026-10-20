@@ -1,0 +1,17 @@
+x-runtipi:
+  schema_version: 2
+services:
+  fileflows:
+    image: revenz/fileflows
+    volumes:
+      - ${APP_DATA_DIR}/temp:/temp
+      - ${APP_DATA_DIR}/logs:/app/Logs
+      - ${APP_DATA_DIR}/common:/app/common
+      - /mnt/video:/mnt/video
+    environment:
+      - BROWSER_START_DIR=/mnt/video
+      - TZ=America/New_York
+    x-runtipi:
+      internal_port: "5000"
+      is_main: true
+
