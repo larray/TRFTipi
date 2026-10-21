@@ -1,7 +1,7 @@
 ---
 name: FileFlows
 short_desc: FileFlows lets you monitor and process any file type with custom flows.
-version: 26.10
+version: 26.10.3.8555
 ---
 
 # FileFlows

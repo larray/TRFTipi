@@ -4,7 +4,9 @@ services:
   fileflows:
     image: revenz/fileflows
     volumes:
+    volumes:
       - ${APP_DATA_DIR}/temp:/temp
+      - ${APP_DATA_DIR}/data:/app/Data
       - ${APP_DATA_DIR}/logs:/app/Logs
       - ${APP_DATA_DIR}/common:/app/common
       - /mnt/video:/mnt/video
