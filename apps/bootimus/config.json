@@ -4,7 +4,9 @@
   "urn": "bootimus:_user",
   "available": true,
   "port": 8080,
-  "categories": ["development","network","security"],
+  "categories": [
+    "development"
+  ],
   "description": "Self-contained PXE and HTTP boot server. One binary. Zero config. Built-in proxyDHCP so you never touch your router. 50+ distros detected automatically.",
   "short_desc": "Self-contained PXE and HTTP boot server.",
   "author": "bootimus.com - Gary Bowers",
@@ -16,7 +18,7 @@
     "amd64",
     "arm64"
   ],
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "0.1.80",
   "dynamic_config": true,
   "deprecated": false,
