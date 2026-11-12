@@ -1,0 +1,30 @@
+{
+  "id": "bootimus",
+  "name": "Bootimus",
+  "urn": "bootimus:_user",
+  "available": true,
+  "port": 8080,
+  "categories": ["development","network","security"],
+  "description": "Self-contained PXE and HTTP boot server. One binary. Zero config. Built-in proxyDHCP so you never touch your router. 50+ distros detected automatically.",
+  "short_desc": "Self-contained PXE and HTTP boot server.",
+  "author": "bootimus.com - Gary Bowers",
+  "source": "https://hub.docker.com/r/garybowers/bootimus",
+  "website": "https://bootimus.com/",
+  "exposable": true,
+  "no_gui": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "tipi_version": 1,
+  "version": "0.1.80",
+  "dynamic_config": true,
+  "deprecated": false,
+  "force_expose": false,
+  "generate_vapid_keys": false,
+  "form_fields": [],
+  "https": false,
+  "created_at": 1792522906615,
+  "updated_at": 1793118263120,
+  "force_pull": false
+}
