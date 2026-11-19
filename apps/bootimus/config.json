@@ -18,15 +18,24 @@
     "amd64",
     "arm64"
   ],
-  "tipi_version": 5,
+  "tipi_version": 6,
   "version": "0.1.81",
   "dynamic_config": true,
   "deprecated": false,
   "force_expose": false,
   "generate_vapid_keys": false,
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "ip",
+      "label": "Server IP address",
+      "hint": "LAN IP of this Docker host, advertised to PXE clients",
+      "placeholder": "10.10.10.10",
+      "required": true,
+      "env_variable": "BOOTIMUS_SERVER_ADDR"
+    }
+  ],
   "https": false,
-  "created_at": 1792522906615,
-  "updated_at": 1793118263120,
+  "created_at": 1795127575826,
+  "updated_at": 1795127588572,
   "force_pull": false
 }
